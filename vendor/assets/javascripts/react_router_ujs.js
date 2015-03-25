@@ -1,4 +1,4 @@
-// Unobtrusive scripting adapter for React Router based on react-rails gem. 
+// Unobtrusive scripting adapter for React Router based on react-rails gem.
 // https://github.com/reactjs/react-rails/blob/master/lib/assets/javascripts/react_ujs.js
 (function(document, window, React, ReactRouter) {
   var ROUTER_CLASS_NAME = 'data-react-router-class';
@@ -20,10 +20,10 @@
     var nodes = findReactRouterDOMNodes();
     if (nodes.length >= 1) {
       if (nodes.length > 1) {
-        console.warn('React Router is designed to have a single root router. ' + nodes.length + ' routers were found on the html. Using the first one.');        
+        console.warn('React Router is designed to have a single root router. ' + nodes.length + ' routers were found on the html. Using the first one.');
       }
       var routerNode = nodes[0];
-      
+
       // Assume className is simple and can be found at top-level (window).
       // Fallback to eval to handle cases like 'My.React.ComponentName'.
       var className = routerNode.getAttribute(ROUTER_CLASS_NAME);
@@ -32,7 +32,7 @@
       var locationName = routerNode.getAttribute(LOCATION_CLASS_NAME);
       var location = ReactRouter[locationName] ;
 
-      ReactRouter.run(routes, location, function (Handler) {
+      ReactRouter.run(routes, function (Handler, state) {
         React.render(React.createElement(Handler), routerNode);
       });
     }

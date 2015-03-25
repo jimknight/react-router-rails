@@ -11,9 +11,9 @@
 1. Add to your `Gemfile` and install with bundler:
 
   ```ruby
-  gem 'react-router-rails', '~>0.11.6.1'
+  gem 'react-router-rails', '~>0.13.1'
   ```
-  
+
   ```bash
   bundle install
   ```
@@ -25,9 +25,9 @@
   // OR
   //= require react_router.min
   ```
-  
+
   Or in `app/assets/javascripts/application.js.coffee`:
-  
+
   ```coffeescript
   #= require react_router
   #OR
@@ -82,7 +82,7 @@
 ## Roadmap
 
 1. Better handle of production version
-  
+
   Instead of explicit require minified version, we should make it possible to configure that in the environment config files like the react-rails configuration (ex. config.react_router_variant = :production)
 
 2. Serverside rendering
